@@ -1,9 +1,14 @@
 pipeline {
-    agent { dockerfile {additionalBuildArgs  '--network host -t platform-tests'} }
+    agent { 
+      dockerfile {
+        additionalBuildArgs  '--network host -t platform-tests'
+        args '-u root:sudo'
+      }
+    }
     stages {
         stage('Test') {
             steps {
-              sh 'dapr run --components-path /root/.dapr/components --placement-host-address aaws.singlewire.lan -- pytest'
+              sh 'dapr run --placement-host-address aaws.singlewire.lan -- pytest'
             }
         }
     }

@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-              sh 'echo Hello World'
+              sh 'dapr run --placement-host-address aaws.singlewire.lan -- pytest'
             }
         }
     }

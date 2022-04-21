@@ -31,4 +31,4 @@ RUN playwright install
 RUN playwright install-deps
 
 # Set entrypoint to hard code test run configuration
-ENTRYPOINT ["dapr", "run", "--placement-host-address", "aaws.singlewire.lan", "--","pytest"]
+# ENTRYPOINT ["dapr", "run", "--placement-host-address", "aaws.singlewire.lan", "--","pytest"]

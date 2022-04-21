@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile {label 'platform-test'} }
+    agent { dockerfile {additionalBuildArgs  '--network host -t platform-tests'} }
     stages {
         stage('Test') {
             steps {

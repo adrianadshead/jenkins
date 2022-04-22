@@ -10,7 +10,7 @@ pipeline {
             steps {
               sh 'dapr run --placement-host-address aaws.singlewire.lan -- pytest -V'
               sh 'ls -la'
-              sh 'dapr run --placement-host-address aaws.singlewire.lan -- pytest tests'
+              sh 'dapr run --placement-host-address aaws.singlewire.lan -- pytest --junitxml tests'
             }
         }
     }

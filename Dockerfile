@@ -30,5 +30,7 @@ RUN pip-sync requirements_jenkins_platform_tests.txt
 RUN playwright install
 RUN playwright install-deps
 
+# Set user for the testing environment
+USER root
 # Set entrypoint to hard code test run configuration
 # ENTRYPOINT ["dapr", "run", "--placement-host-address", "aaws.singlewire.lan", "--","pytest"]

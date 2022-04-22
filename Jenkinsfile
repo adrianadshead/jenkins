@@ -2,7 +2,7 @@ pipeline {
     agent { 
       dockerfile {
         additionalBuildArgs  '--network host -t platform-tests'
-        args '-u jenkins:root'
+        args '-u root'
       }
     }
     stages {

@@ -6,7 +6,8 @@ FROM ubuntu
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y upgrade && apt-get -y install apt-utils
 
-# Install dapr
+# Install dapr to user jenkins
+USER 1114114256:1114112513
 RUN apt-get -y install curl
 RUN curl -s https://raw.githubusercontent.com/dapr/cli/master/install/install.sh | /bin/bash
 RUN dapr init --slim

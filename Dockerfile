@@ -9,9 +9,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install apt-utils
 # Install dapr to user jenkins
 RUN apt-get -y install curl
 RUN curl -s https://raw.githubusercontent.com/dapr/cli/master/install/install.sh | /bin/bash
-USER 1114114256:1114112513
 RUN dapr init --slim
-USER root
 
 # Install python 3.8 in a virtualenv
 RUN apt-get -y install python3.8 python3.8-venv
